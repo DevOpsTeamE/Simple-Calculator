@@ -20,6 +20,14 @@ def trigoMenu():
     print("5. Inverse Cosine");
     print("6. Inverse Tangent");
 
+def perform_exponents():
+    print("\nPerfom Exponents: ")
+    num = float(input("Enter a number: "))
+    power = int(input("Enter the exponent number: "))
+
+    result = num**power
+
+    print(f"Result: {result:.2f}\n") 
 
 while True:
     mainMenu();
@@ -43,8 +51,8 @@ while True:
     elif (selection == 5):
         trigoMenu()
         trigoSelection = int(input("Input your choice: "))
-
-
+    elif (selection == 6):
+        perform_exponents()
 
 
     elif (selection == 9):
