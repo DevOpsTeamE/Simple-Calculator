@@ -30,23 +30,21 @@ def perform_exponents():
     print(f"Result: {result:.2f}\n") 
 
 def convert_to_percentage():
-    while True:
-        try:
-            # Get user input as a decimal number
-            number = float(input("Enter a decimal number: "))
+
+    # Get user input as a decimal number
+    number = float(input("Enter a decimal number between 0 and 1: "))
             
-            # Check if the input is in the valid range (0 to 1)
-            if 0 <= number <= 1:
-                # Convert the number to a percentage
-                percentage = number * 100
+    # Check if the input is in the valid range (0 to 1)
+    if 0 <= number <= 1:
+        # Convert the number to a percentage
+        percentage = number * 100
                 
-                # Print the result
-                print(f"{number} as a percentage is: {percentage:.2f}%")
-                break
-            else:
-                print("Please enter a number between 0 and 1.")
-        except ValueError:
-            print("Invalid input. Please enter a valid decimal number.")
+        # Print the result
+        print(f"{number} as a percentage is: {percentage:.2f}%")
+        
+    else:
+        print("Please enter a number between 0 and 1.")
+
 
 
 
@@ -75,6 +73,8 @@ while True:
     elif (selection == 6):
         perform_exponents()
 
+    elif (selection == 8):
+        convert_to_percentage()
 
     elif (selection == 9):
         result = 0
