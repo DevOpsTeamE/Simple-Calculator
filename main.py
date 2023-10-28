@@ -64,6 +64,36 @@ def DoTrignometry():
             if success:
                 # Finish execution ..
                 return value, success
+def perform_exponents():
+    print("\nPerfom Exponents: ")
+    num = float(input("Enter a number: "))
+    power = int(input("Enter the exponent number: "))
+
+    result = num**power
+
+    print(f"Result: {result:.2f}\n") 
+
+def convert_to_percentage():
+
+    # Get user input as a decimal number
+    number = float(input("Enter a decimal number between 0 and 1: "))
+            
+    # Check if the input is in the valid range (0 to 1)
+    if 0 <= number <= 1:
+        # Convert the number to a percentage
+        percentage = number * 100
+                
+        # Print the result
+        print(f"{number} as a percentage is: {percentage:.2f}%")
+        
+    else:
+        print("Please enter a number between 0 and 1.")
+
+def perform_square_root():
+    value = float(input("Enter a number to squart root: "))
+    sqr_root_value = math.sqrt(value)
+    print(f"Result: {sqr_root_value:.2f}\n") 
+
 
 while True:
     mainMenu()
@@ -91,6 +121,14 @@ while True:
             if success:
                 print(result)
                 break
+        trigoSelection = int(input("Input your choice: "))
+    elif (selection == 6):
+        perform_exponents()
+    elif (selection == 7):
+        perform_square_root()
+    elif (selection == 8):
+        convert_to_percentage()
+
     elif (selection == 9):
         result = 0
         print(result)
