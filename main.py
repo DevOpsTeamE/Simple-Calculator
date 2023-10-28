@@ -1,5 +1,5 @@
 import math
-result = float(input("Select a number: "))
+#result = float(input("Select a number: "))
 def mainMenu():
     print("1. Addition");
     print("2. Subtraction");
@@ -45,7 +45,10 @@ def convert_to_percentage():
     else:
         print("Please enter a number between 0 and 1.")
 
-
+def perform_square_root():
+    value = float(input("Enter a number to squart root: "))
+    sqr_root_value = math.sqrt(value)
+    print(f"Result: {sqr_root_value:.2f}\n") 
 
 
 while True:
@@ -72,7 +75,8 @@ while True:
         trigoSelection = int(input("Input your choice: "))
     elif (selection == 6):
         perform_exponents()
-
+    elif (selection == 7):
+        perform_square_root()
     elif (selection == 8):
         convert_to_percentage()
 
