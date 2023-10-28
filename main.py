@@ -1,5 +1,9 @@
 import math
+
+TRIG_FUNCS = [math.sin, math.cos, math.tan, math.asin, math.acos, math.atan]
+
 result = float(input("Select a number: "))
+
 def mainMenu():
     print("1. Addition");
     print("2. Subtraction");
@@ -20,9 +24,49 @@ def trigoMenu():
     print("5. Inverse Cosine");
     print("6. Inverse Tangent");
 
+def GetNumber(input, _type):
+    success =1
+    value =0
+    try:
+        value =_type(input)
+    except ValueError:
+        success =0
+        print("Invalid Input. Please re-enter input.")
+    return value, success
+
+def DoTrigFunction(choice):
+    success =0
+    value =0
+
+    if choice>=1 and choice <=6:
+        value, success = GetNumber(input("Please enter value."), float)
+        if not success:
+            return value, success
+        else:
+            if value >= 4 and value <=6 and (value <-1 or value >1):
+                print("Invalid Input. Please re-enter input.")
+            else:
+                # Input should be fine here ..
+                value =TRIG_FUNCS[choice](value)
+                return value, success
+    else:
+        print("Invalid Input. Please re-enter input.")
+        return value, success
+
+def DoTrignometry():
+    value, success = GetNumber(input("Please enter your choice: "), int)
+    if not success:
+        return value, success
+    else:
+        choice =value
+        while True:
+            value, success =DoTrigFunction(choice)
+            if success:
+                # Finish execution ..
+                return value, success
 
 while True:
-    mainMenu();
+    mainMenu()
     selection = float(input("Input your choice: "))
     if (selection == 1):
         num = float(input("Input number to add: "))
@@ -42,11 +86,11 @@ while True:
         print(result)
     elif (selection == 5):
         trigoMenu()
-        trigoSelection = int(input("Input your choice: "))
-
-
-
-
+        while True:
+            result, success = DoTrignometry()
+            if success:
+                print(result)
+                break
     elif (selection == 9):
         result = 0
         print(result)
@@ -55,4 +99,3 @@ while True:
     elif (selection == 10):
         print("GoodBye!")
         break
-
