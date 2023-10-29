@@ -43,7 +43,7 @@ def DoTrigFunction(choice):
         if not success:
             return value, success
         else:
-            if value >= 4 and value <=6 and (value <-1 or value >1):
+            if choice >= 4 and choice <=6 and (value <-1 or value >1):
                 print("Invalid Input. Please re-enter input.")
             else:
                 # Input should be fine here ..
